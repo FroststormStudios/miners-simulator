@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Miners Simulator BETA 0.1.5</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+    #loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      overflow: hidden;
+    }
+
+    #loading-screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+</style>to;
+        }
+    </style>
+    <script>
+        window.addEventListener('load', function() {
+          var loadingScreen = document.getElementById('loading-screen');
+          setTimeout(function() {
+            loadingScreen.style.display = 'none'; // Hide the loading screen after 3 seconds
+          }, 3000);
+        });
+    </script>
+</head>
+<body>
+    <div id="loading-screen">
+        <img src="FroststormStudios.png" alt="Loading Image">
+    </div>
+    
+    <div class="content">
+        <div class="menus">
+            <div class="main">
+                <button id="Mine">Mine rock</button>
+                <button id="visit">Visit Marketplace</button>
+                <button id="minecoal">Mine For coal</button>
+                <button id="minecopper">Mine For copper</button>
+                <button id="Version">Version 0.1.5</button>
+                <div class="dropdown">
+                    <button class="dropbtn">Credits</button>
+                    <div class="dropdown-content">
+                        <p>Coders: Vishnu Tharmalingam, Hridaan Singh</p>
+                        <p>Idea Creators: Vishnu Tharmalingam, Hridaan Singh, Nathan Ji, Amali Gnanapragasam</p>
+                        <p>Sprite Designers: Hridaan Singh, Samuel Yengibaryn</p>
+                        <p>Owner/Head Of Studio and Team: Vishnu Tharmalingam</p>
+                        <p>Co-Owner/Head Of Studio and Team: Hridaan Singh</p>
+                        <p>Game Tester/BugFinder: Nathan Ji</p>
+                        <p>Music Producer: Amali Gnanapragasam</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="marketplace">
+                <div class="sellButtons">
+                    <button id="sell1">Sell [1] rock</button>
+                    <button id="sell10">Sell [10] rocks</button>
+                    <button id="sellAll">Sell All rocks</button>
+                    <button id="sell1COAL">Sell [1] coal</button>
+                    <button id="sell10COAL">Sell [10] coal</button>
+                    <button id="sellAllCOAL">Sell All coal</button>
+                    <button id="sell1COPPER">Sell [1] copper</button>
+                    <button id="sell10COPPER">Sell [10] copper</button>
+                    <button id="sellAllCOPPER">Sell All copper</button>
+                </div>
+
+                <div class="upgrades">
+                    <button id="autoMiner">Buy [1] Auto Miner ($100)</button>
+                    <button id="autoCoalMiner">Buy [1] Coal Auto Miner ($150)</button>
+                    <button id="autoCopperMiner">Buy [1] Copper Auto Miner ($200)</button>
+                </div>
+
+                <div class="items">
+                    <button id="buyStonePickaxe">Buy [1] Stone Pickaxe ($50)</button>
+                    <button id="buyCoalPickaxe">Buy [1] Coal Pickaxe ($500)</button>
+                </div>
+                <button id="return">Return</button>
+            </div>
+        </div>
+
+        <div class="inventory">
+            <p id="money">Money: $0</p>
+            <p id="rocks">You now own 0 rocks.</p>
+            <p id="StonePickaxes"></p>
+            <p id="CoalPickaxes"></p>
+            <p id="coal"></p>
+            <p id="copper"></p>
+        </div>
+        
+        <div class="music-menu">
+            <button id="toggleMusic">Toggle Music</button>
+            <button id="stopMusic">Stop Music</button>
+        </div>
+    </div>
+    
+    <script>
+        // JavaScript code for music feature
+        var backgroundMusic = new Audio("Miners Idle.mp3");
+        backgroundMusic.loop = true;
+        backgroundMusic.volume = 0.5;
+        var isMusicPlaying = true;
+        
+        function toggleMusic() {
+            if (isMusicPlaying) {
+                backgroundMusic.pause();
+            } else {
+                backgroundMusic.play();
+            }
+            isMusicPlaying = !isMusicPlaying;
+        }
+        
+        function stopMusic() {
+            backgroundMusic.pause();
+            backgroundMusic.currentTime = 0;
+            isMusicPlaying = false;
+        }
+        
+        document.getElementById("toggleMusic").addEventListener("click", toggleMusic);
+        document.getElementById("stopMusic").addEventListener("click", stopMusic);
+    </script>    
+</body>
+</html>

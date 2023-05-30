@@ -1,0 +1,91 @@
+.inventory {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+}
+
+.marketplace {
+    margin-top: 40px;
+}
+
+.sellButtons,
+.upgrades,
+.items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+button {
+    background-color: white;
+    font-size: 18px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.button,
+body {
+    background: repeating-linear-gradient(45deg, #444444, #444444 10px, #888888 10px, #888888 20px),
+                repeating-linear-gradient(-45deg, #444444, #444444 10px, #888888 10px, #888888 20px),
+                repeating-linear-gradient(45deg, #888888, #888888 10px, #444444 10px, #444444 20px),
+                repeating-linear-gradient(-45deg, #888888, #888888 10px, #444444 10px, #444444 20px);
+    background-color: #222222;
+    background-size: 40px 40px;
+}
+
+.button {
+    background-color: white;
+    font-size: 18px;
+}
+
+.marketplace {
+    display: none;
+}
+
+.inventory {
+    margin-top: 20px;
+}
+
+.marketplace .button {
+    margin-top: 10px;
+}
+
+.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content p {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
